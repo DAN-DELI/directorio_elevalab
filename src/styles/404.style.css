@@ -1,0 +1,118 @@
+.not-found {
+	width: 100%;
+	min-height: 100vh;
+	min-height: 100svh;
+	position: relative;
+	overflow: hidden;
+	display: grid;
+	place-items: center;
+	padding: clamp(2rem, 6vh, 5rem) 1.5rem;
+	background-color: #f5f7fa;
+	isolation: isolate;
+}
+
+.not-found::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -2;
+	background: linear-gradient(135deg, rgba(255, 193, 7, 0.12), transparent 38%),
+		linear-gradient(315deg, rgba(26, 43, 92, 0.08), transparent 46%);
+}
+
+.not-found-content {
+	width: min(100%, 640px);
+	position: relative;
+	z-index: 1;
+	text-align: center;
+}
+
+.not-found-code {
+	color: var(--eleva-blue);
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	font-size: clamp(4.5rem, 18vw, 11rem);
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	line-height: 0.85;
+}
+
+.not-found-divider {
+	width: 64px;
+	height: 5px;
+	margin: 1.75rem auto 1.5rem;
+	background-color: var(--eleva-orange);
+}
+
+.not-found-eyebrow {
+	margin-bottom: 0.75rem;
+	color: var(--eleva-orange-dark);
+	font-size: 0.8rem;
+	font-weight: var(--font-weight-bold);
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.not-found h1 {
+	max-width: 520px;
+	margin: 0 auto;
+	color: var(--eleva-blue);
+	font-size: clamp(1.8rem, 4vw, 2.7rem);
+	line-height: 1.15;
+}
+
+.not-found-message {
+	max-width: 480px;
+	margin: 1rem auto 2rem;
+	color: var(--gray-700);
+	font-size: 1rem;
+}
+
+.not-found-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.65rem;
+	padding: 0.8rem 1.25rem;
+	border-radius: var(--border-radius-md);
+	background-color: var(--eleva-orange);
+	color: var(--white);
+	font-weight: var(--font-weight-semibold);
+	text-decoration: none;
+	transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.not-found-action:hover {
+	background-color: var(--eleva-orange-dark);
+	transform: translateY(-2px);
+}
+
+.not-found-decoration {
+	position: absolute;
+	z-index: -1;
+	border: 2px solid rgba(26, 43, 92, 0.12);
+	transform: rotate(45deg);
+}
+
+.not-found-decoration-top {
+	top: -100px;
+	right: 12%;
+	width: 210px;
+	height: 210px;
+}
+
+.not-found-decoration-bottom {
+	bottom: -150px;
+	left: 10%;
+	width: 280px;
+	height: 280px;
+	border-color: rgba(255, 107, 53, 0.16);
+}
+
+@media (max-width: 768px) {
+	.not-found {
+		padding: 2rem 1.25rem;
+	}
+
+	.not-found-message {
+		font-size: 0.95rem;
+	}
+}
