@@ -13,7 +13,6 @@ import { Buscador, Hero, HistoriasSection } from "../../home/index.js";
  */
 export const homeView = () => {
   return `
-    ${Header()}
     <main>
       ${Hero()}
       ${Buscador()}
@@ -209,7 +208,7 @@ export const homeView = () => {
         <!-- Tarjeta 3 -->
         <article class="historia-card">
           <div class="historia-card-avatar">
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&auto=format&fit=crop&q=80" alt="Laura Isabel Gómez" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&auto=format&fit=crop&q=80](https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&auto=format&fit=crop&q=80" alt="Laura Isabel Gómez" loading="lazy">
           </div>
           <div class="historia-card-content">
             <h3 class="historia-card-frase">"Cuidar también es innovar"</h3>

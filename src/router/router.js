@@ -6,6 +6,7 @@
 // IMPORTACIONES
 // -------------------------------------------------------
 import { routes } from "./routes.js";
+import { notFoundView } from "../layout/404/view/404.view.js";
 
 
 // -------------------------------------------------------
@@ -85,8 +86,7 @@ const render = async () => {
 
     // 404 - Ruta no definida
     if (!route) {
-        container.innerHTML = `
-        <h1>404 - No se encontro la ruta<h1>`;
+        container.innerHTML = notFoundView();
         return;
     }
 

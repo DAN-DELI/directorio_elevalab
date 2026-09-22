@@ -14,7 +14,7 @@ export const GRADUADOS = [
     nombre: "María Fernanda López",
     carrera: "Administración de Empresas",
     rol: "Fundadora de AgroTomás",
-    foto: ""
+    foto: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&auto=format&fit=crop&q=80](https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&auto=format&fit=crop&q=80"
   },
   {
     id: "andres-felipe-ramirez",
