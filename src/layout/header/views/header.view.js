@@ -7,7 +7,7 @@
  *
  * @returns {string} Cadena de texto con la plantilla HTML de la barra de navegación superior.
  */
-export const headerView = () => {
+export const Header = () => {
     return `
     <header class="header">
       <div class="container header-container">

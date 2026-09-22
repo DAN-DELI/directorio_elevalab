@@ -2,6 +2,10 @@
 //                    VISTA => #/home
 // ========================================================
 
+import { Footer } from "../../../layout/footer/views/footer.view.js";
+import { Header } from "../../../layout/index.js";
+import { Buscador, Hero } from "../../home/index.js";
+
 /**
  * Genera el marcado HTML para la vista principal (Home).
  *
@@ -9,6 +13,12 @@
  */
 export const homeView = () => {
     return `
-    <h1>Vista home<h1>
-    `
+    ${Header()}
+    <main>
+      ${Hero()}
+      ${Buscador()}
+      <!-- Aquí irá el grid de empresas -->
+    </main>
+    ${Footer()}
+  `;
 };
