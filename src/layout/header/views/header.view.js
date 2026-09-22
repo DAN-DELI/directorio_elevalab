@@ -8,27 +8,42 @@
  * @returns {string} Cadena de texto con la plantilla HTML de la barra de navegación superior.
  */
 export const Header = () => {
-    return `
-    <header class="header">
-      <div class="container header-container">
-        <!-- Logo ElevaLab -->
-        <a href="#/" class="logo">
-          <span class="logo-bracket">[</span>
-          <span class="logo-text">elevalab</span>
-          <span class="logo-bracket">]</span>
+  return `
+    <header class="eleva-header">
+      <div class="eleva-header-container">
+        <!-- Logo con brackets en estilo monoespaciado -->
+        <a href="#/" class="eleva-logo">
+          <span>[ eleva<span class="logo-accent">lab</span> ]</span>
         </a>
 
-        <!-- Navegación -->
-        <nav class="nav">
-          <a href="#/" class="nav-link active">inicio</a>
-          <a href="#/convocatorias" class="nav-link">convocatorias</a>
-          <a href="#/eleva-house" class="nav-link">Eleva House</a>
-          <a href="#/noticias" class="nav-link">noticias</a>
-          <a href="#/contacto" class="nav-link">contacto</a>
-        </nav>
+        <div class="eleva-nav-wrapper">
+          <!-- Navegación Principal -->
+          <nav aria-label="Principal" class="eleva-nav-desktop">
+            <ul class="eleva-nav-list">
+              <li><a class="eleva-nav-link active" href="#/">inicio</a></li>
+              <li><a class="eleva-nav-link" href="#/convocatorias">convocatorias</a></li>
+              <li><a class="eleva-nav-link" href="#/eleva-house">Eleva House</a></li>
+              <li><a class="eleva-nav-link" href="#/noticias">noticias</a></li>
+              <li><a class="eleva-nav-link" href="#/contacto">contacto</a></li>
+            </ul>
+          </nav>
 
-        <!-- Botón login -->
-        <a href="#/login" class="btn btn-outline btn-login">INICIAR SESIÓN</a>
+          <!-- Botón de Iniciar Sesión (Pill button) -->
+          <a class="eleva-btn-login" href="#/login">INICIAR SESIÓN</a>
+
+          <!-- Botón de Menú Móvil -->
+          <button 
+            type="button" 
+            aria-expanded="false" 
+            aria-controls="menu-nav-movil" 
+            aria-label="Abrir menú" 
+            class="eleva-mobile-toggle"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
       </div>
     </header>
   `;

@@ -1,120 +1,161 @@
-/* // ========================================================
-//                     ESTILOS FOOTER
-// ======================================================== */
 
 .footer {
-    background: var(--eleva-blue);
-    color: var(--white);
-    margin-top: var(--spacing-xl);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+  /* --- LÍNEA SUPERIOR DE SEPARACIÓN --- */
+  border-top: 1px solid var(--gray-300); /* Mismo color de la línea interna */
+  padding-top: var(--spacing-xl);        /* Espaciado interno superior */
+  padding-bottom: var(--spacing-xl);     /* Espaciado interno inferior */
+  
+  font-family: var(--font-primary);
+  background: var(--white);
+  color: var(--gray-900);
 }
 
 .footer-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: var(--spacing-xl);
-    padding: var(--spacing-xl) var(--spacing-md);
+  width: 100%;
+  max-width: 1100px; /* Ancho máximo para evitar que se desparrame en pantallas grandes */
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columnas de idéntico tamaño */
+  gap: var(--spacing-xl);
+  align-items: center; /* Alinea ambos bloques verticalmente al centro */
 }
 
-.footer-logo {
-    font-size: 1.5rem;
-    margin-bottom: var(--spacing-md);
-    display: inline-flex;
+/* 2. Bloque Izquierdo: Flexbox interno alineado */
+.footer-left {
+  display: flex;
+  align-items: flex-end; /* Mantiene el botón alineado a la base del texto */
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding-right: var(--spacing-xl);
+  border-right: 1px solid var(--gray-300); /* Línea divisoria central */
 }
 
-.footer-logo .logo-text {
-    color: var(--white);
-}
-
-.footer-desc {
-    opacity: 0.8;
-    font-size: 0.95rem;
-    max-width: 300px;
+.footer-ecosistema {
+  flex: 1;
 }
 
 .footer-title {
-    font-size: 1rem;
-    font-weight: var(--font-weight-semibold);
-    margin-bottom: var(--spacing-md);
-    color: var(--eleva-orange);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--eleva-blue);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-xs);
 }
 
-.footer-links {
-    list-style: none;
+.footer-title-highlight {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 4px;
 }
 
-.footer-links li {
-    margin-bottom: var(--spacing-sm);
+.footer-title-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--eleva-yellow);
 }
 
-.footer-links a {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color var(--transition-fast);
+.footer-desc {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-top: var(--spacing-sm);
 }
 
-.footer-links a:hover {
-    color: var(--eleva-orange);
+/* Botón "Conoce más" */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--eleva-blue);
+  border-radius: var(--border-radius-md);
+  color: var(--eleva-blue);
+  font-weight: var(--font-weight-semibold);
+  font-size: 0.875rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-normal);
 }
 
+.btn-outline:hover {
+  background-color: var(--eleva-blue);
+  color: var(--white);
+}
+
+/* 3. Bloque Derecho: Equilibrado con padding equivalente */
+.footer-redes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: var(--spacing-md); /* Da espacio respecto a la línea central */
+}
+
+.footer-redes-title {
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-bold);
+  color: var(--eleva-blue);
+  margin-bottom: var(--spacing-xs);
+}
+
+.footer-redes-desc {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Iconos Sociales con sus colores respectivos */
 .social-links {
-    display: flex;
-    gap: var(--spacing-md);
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
 }
 
 .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: var(--border-radius-full);
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
-    transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--border-radius-md);
+  color: var(--white);
+  transition: transform var(--transition-fast);
 }
 
 .social-link:hover {
-    background: var(--eleva-orange);
-    transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-.footer-bottom {
-    background: rgba(0, 0, 0, 0.2);
-    padding: var(--spacing-md) 0;
-}
+.social-link[aria-label="LinkedIn"] { background-color: #0077b5; }
+.social-link[aria-label="Instagram"] { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+.social-link[aria-label="Facebook"] { background-color: #1877f2; }
+.social-link[aria-label="YouTube"] { background-color: #ff0000; }
 
-.footer-bottom-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.85rem;
-    opacity: 0.7;
-}
-
-.footer-tagline {
-    font-style: italic;
-}
-
-/* Responsive footer */
+/* 4. Adaptación Responsiva (Móviles y Tablets) */
 @media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
-        text-align: center;
-    }
+  .footer-container {
+    grid-template-columns: 1fr; /* Pasa a 1 columna */
+    gap: var(--spacing-lg);
+  }
 
-    .footer-desc {
-        margin: 0 auto;
-    }
+  .footer-left {
+    flex-direction: column;
+    align-items: flex-start;
+    border-right: none;
+    border-bottom: 1px solid var(--gray-300);
+    padding-right: 0;
+    padding-bottom: var(--spacing-lg);
+  }
 
-    .social-links {
-        justify-content: center;
-    }
-
-    .footer-bottom-container {
-        flex-direction: column;
-        gap: var(--spacing-sm);
-        text-align: center;
-    }
+  .footer-redes {
+    padding-left: 0;
+  }
 }

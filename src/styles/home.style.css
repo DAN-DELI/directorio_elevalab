@@ -1,0 +1,540 @@
+/* ========================================================
+   SECCIÓN: EMPRESAS DESTACADAS
+======================================================== */
+.empresas-destacadas-section {
+  background-color: var(--white);
+  padding-bottom: 35px;
+}
+
+.empresas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--spacing-lg);
+  min-height: 250px;
+}
+
+/* Estado de carga */
+.loading-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl) 0;
+  color: var(--gray-500);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--gray-100);
+  border-top-color: var(--eleva-orange);
+  border-radius: var(--border-radius-full);
+  animation: spin 0.8s linear infinite;
+  margin-bottom: var(--spacing-md);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================================
+   ESTILOS DE TARJETA DE EMPRESA (MAQUETA OFICIAL)
+======================================================== */
+.empresa-card {
+  background-color: var(--white);
+  border: 1px solid var(--gray-200, #E5E7EB);
+  border-radius: var(--border-radius-lg, 12px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.empresa-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Banner e imagen del Logo superpuesto */
+.empresa-card-media {
+  position: relative;
+  height: 120px;
+  background-color: var(--gray-100, #F3F4F6);
+  margin-bottom: 35px; /* Espacio para el logo circular que sobresale */
+}
+
+.empresa-card-banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.empresa-card-logo-wrapper {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--white);
+  padding: 4px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.empresa-card-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Cuerpo de la tarjeta */
+.empresa-card-body {
+  padding: 0 var(--spacing-md, 16px) var(--spacing-sm, 12px);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.empresa-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0F172A; /* Azul oscuro corporativo */
+  margin: 0 0 2px 0;
+}
+
+.empresa-card-program {
+  font-size: 0.8rem;
+  color: #64748B;
+  margin-bottom: var(--spacing-sm, 10px);
+}
+
+.empresa-card-desc {
+  font-size: 0.825rem;
+  color: #475569;
+  line-height: 1.4;
+  margin-bottom: var(--spacing-md, 16px);
+  flex-grow: 1;
+}
+
+/* Contenedor de Meta información (Ubicación, Sector, Año) */
+.empresa-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.775rem;
+  color: #64748B;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meta-item svg {
+  color: #FF6B35; /* Color naranja institucional */
+  flex-shrink: 0;
+}
+
+/* Footer de la tarjeta */
+.empresa-card-footer {
+  padding: 12px var(--spacing-md, 16px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  border-top: 1px solid var(--gray-100, #F1F5F9);
+}
+
+.btn-ver-perfil {
+  flex-grow: 1;
+  text-align: center;
+  padding: 6px 12px;
+  border: 1px solid #0F172A;
+  border-radius: 6px;
+  color: #0F172A;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-ver-perfil:hover {
+  background-color: #0F172A;
+  color: #FFFFFF;
+}
+
+.btn-favorito {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  color: #EF4444; /* Color rojo/rosa para el ícono de corazón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.btn-favorito:hover {
+  transform: scale(1.15);
+}
+
+/* ========================================================
+   SECCIÓN BENEFICIOS - REFACTOR
+======================================================== */
+.beneficios-section {
+    background-color: #F1F5F9; /* Gris muy claro de fondo idéntico a la maqueta */
+    padding: 3.5rem 0;
+    width: 100%;
+}
+
+.beneficios-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+/* Columna Izquierda */
+.beneficios-content-left {
+    flex: 0 0 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.beneficios-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #FF5500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.beneficios-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #0F2552; /* Azul marino institucional */
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Acento decorativo amarillo debajo del título */
+.title-accent-line {
+    width: 32px;
+    height: 4px;
+    background-color: #FFC107; /* Amarillo limpio de la maqueta */
+    border-radius: 2px;
+    margin: 1rem 0 1.25rem 0;
+}
+
+.beneficios-description {
+    font-size: 0.85rem;
+    color: #64748B;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Columna Derecha (Grid) */
+.beneficios-grid-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.beneficios-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.row-top .beneficio-card {
+    flex: 1;
+}
+
+.row-bottom .beneficio-card {
+    flex: 1;
+}
+
+/* Tarjeta individual */
+.beneficio-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 1.15rem 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    box-shadow: 0 2px 8px rgba(15, 37, 82, 0.04);
+    border: 1px solid #F1F5F9;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 37, 82, 0.08);
+}
+
+/* Círculos de Íconos */
+.beneficio-icon-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.icon-yellow {
+    background-color: #FEF3C7; /* Fondo amarillo claro */
+    color: #0F2552;
+}
+
+.icon-blue {
+    background-color: #DBEAFE; /* Fondo azul pastel */
+    color: #0F2552;
+}
+
+.beneficio-icon-circle svg {
+    stroke: #0F2552;
+}
+
+/* Información dentro de la tarjeta */
+.beneficio-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.beneficio-card-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0F2552;
+    margin: 0;
+}
+
+.beneficio-card-text {
+    font-size: 0.775rem;
+    color: #64748B;
+    line-height: 1.45;
+    margin: 0;
+}
+
+/* Responsive para dispositivos móviles */
+@media (max-width: 992px) {
+    .beneficios-container {
+        flex-direction: column;
+    }
+    
+    .beneficios-content-left {
+        flex: 1 1 auto;
+    }
+
+    .beneficios-row {
+        flex-direction: column;
+    }
+}
+
+/* ========================================================
+   SECCIÓN HISTORIAS QUE INSPIRAN
+======================================================== */
+.historias-section {
+    background-color: #FFFFFF;
+    padding: 3.5rem 0;
+    width: 100%;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.historias-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+/* Columna Izquierda */
+.historias-left {
+    flex: 0 0 310px;
+    display: flex;
+    flex-direction: column;
+}
+
+.historias-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #FF5500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+
+.historias-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #0F2552;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Línea decorativa amarilla */
+.title-accent-line {
+    width: 32px;
+    height: 4px;
+    background-color: #FFC107;
+    border-radius: 2px;
+    margin: 1rem 0 1.25rem 0;
+}
+
+.historias-description {
+    font-size: 0.85rem;
+    color: #64748B;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* Columna Derecha */
+.historias-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+/* Enlace Superior "Ver más historias" */
+.historias-top-link {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.link-ver-mas {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #0F2552;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.link-ver-mas:hover {
+    color: #FF5500;
+}
+
+.link-ver-mas svg {
+    transition: transform 0.2s ease;
+}
+
+.link-ver-mas:hover svg {
+    transform: translateX(3px);
+}
+
+/* Grid de Tarjetas (3 columnas) */
+.historias-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/* Tarjeta de Graduado */
+.historia-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 0.85rem; /* Reducido para que la imagen ocupe casi todo el alto */
+    display: flex;
+    align-items: stretch; /* Extiende la imagen a toda la altura disponible */
+    gap: 0.85rem;
+    box-shadow: 0 2px 8px rgba(15, 37, 82, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.historia-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(15, 37, 82, 0.08);
+}
+
+/* Contenedor de la Imagen / Avatar Vertical */
+.historia-card-avatar {
+    width: 105px; /* Ancho fijo para mantener la proporción vertical */
+    height: 125px; /* Alto fijo o relativo que abarca el contenido */
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.historia-card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top; /* Enfoca el rostro del graduado */
+    display: block;
+}
+
+/* Contenido de la Tarjeta */
+.historia-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.historia-card-frase {
+    font-size: 0.825rem;
+    font-weight: 800;
+    color: #0F2552;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.25;
+}
+
+.historia-card-nombre {
+    font-size: 0.775rem;
+    font-weight: 700;
+    color: #0F2552;
+    margin: 0 0 0.15rem 0;
+}
+
+.historia-card-carrera,
+.historia-card-rol {
+    font-size: 0.725rem;
+    color: #64748B;
+    margin: 0;
+    line-height: 1.35;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .historias-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .historias-container {
+        flex-direction: column;
+    }
+
+    .historias-left {
+        flex: 1 1 auto;
+    }
+
+    .historias-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
