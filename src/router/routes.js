@@ -1,19 +1,35 @@
 // ========================================================
 //                        RUTAS
 // ========================================================
-// #region | IMPORTACIONES
+
+// -------------------------------------------------------
+// IMPORTACIONES
+// -------------------------------------------------------
+
+import {
+    homeInit,
+    homeView
+} from "../modules/home/index.js";
 
 
 
-// #region | RUTAS
+// -------------------------------------------------------
+// RUTAS
+// -------------------------------------------------------
+
+/**
+ * Registro de rutas de la aplicación que mapea las navegaciones con sus respectivas vistas y controladores.
+ *
+ * @type {Route[]}
+ */
 export const routes = [
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     //                             PUBLICAS
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     {
         path: "#/home",
-        view: () => {return `<h1>Vista inicial<h1>`},
-        init: () => {return console.log("En vista #/home")}
+        view: () => homeView(),
+        init: () => homeInit()
     }
 
 ];

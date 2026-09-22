@@ -1,7 +1,7 @@
 {
-  "name": "frontend-starter-kit",
-  "version": "1.0.0",
-  "description": "Plantilla base frontend.",
+  "name": "directorio_elevalab",
+  "version": "0.0.1",
+  "description": "Frontend del directorio de emprendedores y empresarios tomasinos de ElevaLab..",
   "main": "main.js",
   "scripts": {
     "dev": "vite",

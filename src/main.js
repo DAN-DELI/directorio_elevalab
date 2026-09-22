@@ -3,7 +3,7 @@
 // ========================================================
 
 // #region | IMPORTACIONES
-import './style.css'
+import './styles/style.css'
 import { initRouter } from './router/router'
 
 // #region | LISTENERS
