@@ -1,3 +1,140 @@
 /* // ========================================================
 //                     ESTILOS BASE
 // ======================================================== */
+
+/* --------------------------------------------------------------- */
+/* VARIABLES                                                       */
+/* --------------------------------------------------------------- */
+:root {
+    /* Colores principales */
+    --eleva-blue: #1a2b5c;
+    /* Azul oscuro */
+    --eleva-blue-light: #2d4a8a;
+    /* Azul medio para hover */
+    --eleva-orange: #ff6b35;
+    /* Naranja vibrante (botones, acentos) */
+    --eleva-orange-dark: #e5552a;
+    /* Naranja hover */
+    --eleva-yellow: #ffc107;
+    /* Amarillo de acentos secundarios */
+
+    /* Neutros */
+    --white: #ffffff;
+    --gray-50: #f8f9fa;
+    --gray-100: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-500: #6c757d;
+    --gray-700: #495057;
+    --gray-900: #212529;
+
+    /* Tipografía */
+    --font-primary: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+    --font-weight-normal: 400;
+
+    /* Espaciado */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+
+    /* Bordes */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 16px;
+    --border-radius-full: 50%;
+
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+    /* Transiciones */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--gray-900);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+/* Utilidades */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Botones */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.btn-primary {
+    background-color: var(--eleva-orange);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--eleva-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--eleva-blue);
+    border: 2px solid var(--eleva-blue);
+}
+
+.btn-outline:hover {
+    background-color: var(--eleva-blue);
+    color: var(--white);
+}
+
+/* --------------------------------------------------------------- */
+/* PLACEHOLDER DE IMAGEN                                           */
+/* --------------------------------------------------------------- */
+.img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-300) 100%);
+    color: var(--gray-500);
+    font-weight: var(--font-weight-semibold);
+    font-size: 1.5rem;
+}
